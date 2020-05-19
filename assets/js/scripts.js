@@ -1,7 +1,7 @@
 ;(function () {
   var el = document.querySelector('.landing .bg')
   var loadingImage = new Image()
-  loadingImage.src = '/assets/imgs/splash.jpg'
+  loadingImage.src = '/mySite/assets/imgs/splash.jpg'
   loadingImage.addEventListener('load', function () {
     el.style.opacity = '1'
   })
