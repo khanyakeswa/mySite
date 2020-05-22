@@ -17,13 +17,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
     <title>My Portfolio</title>
   </head>
   <body>
     <main>
-      <div class="logo-container">
-        <div class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+      <div class="logo-container primary">
+        <div class="logo primary">
+          <svg viewBox="0 0 70 70">
+            <defs></defs>
+            <path
+              class="graphic"
+              d="M15,15V85H85V15ZM54.37,65l-.09-.08L39.37,49.83V65H37.5V35h1.87V48.18L52.86,35h2.69L41.07,48.91,57.15,65Zm10.38,0L49.11,49,63.26,35h2.65L51.63,48.91,67.5,65Z"
+              transform="translate(-15 -15)"
+            />
+            <polygon
+              class="b"
+              points="39.37 50 39.28 49.92 24.37 34.83 24.37 50 22.5 50 22.5 20 24.37 20 24.37 33.18 37.86 20 40.55 20 26.07 33.91 42.15 50 39.37 50"
+            />
+            <polygon
+              class="b"
+              points="49.75 50 34.11 33.99 48.26 20 50.91 20 36.63 33.91 52.5 50 49.75 50"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="logo-container secondary">
+        <div class="logo secondary">
+          <svg viewBox="0 0 70 70">
             <defs></defs>
             <path
               class="graphic"
@@ -42,10 +64,11 @@
         </div>
       </div>
       <div class="sections-container">
+        <div class="canvas"></div>
+        <div class="bg">
+          <div class="splash"></div>
+        </div>
         <div class="landing">
-          <div class="bg">
-            <div class="splash"></div>
-          </div>
           <div class="namecard">
             <div class="intro">
               <div class="name">
@@ -63,7 +86,7 @@
           </div>
           <div class="links">
             <a class="github" href="https://github.com/khanyakeswa">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 39.19">
+              <svg viewBox="0 0 40 39.19">
                 <path
                   d="M21.8,4.18A19.94,19.94,0,0,0,18,43v-4.6a8.25,8.25,0,0,1-1.8.2A4.33,4.33,0,0,1,12,34.81a4.15,4.15,0,0,0-1.2-2c-.6-.2-.8-.2-.8-.4,0-.4.6-.4.8-.4,1.2,0,2.21,1.4,2.61,2a3.64,3.64,0,0,0,2.8,2,4,4,0,0,0,1.8-.4A5.07,5.07,0,0,1,20,32c-4.6-1-8-3.6-8-8a9.46,9.46,0,0,1,2.41-6,7.42,7.42,0,0,1-.4-2.8,6.85,6.85,0,0,1,.6-3.2,9,9,0,0,1,5.61,2.6A10.82,10.82,0,0,1,24,14a13,13,0,0,1,4,.6,8.62,8.62,0,0,1,5.6-2.6,9.94,9.94,0,0,1,.4,3.2,6.65,6.65,0,0,1-.4,2.8A9,9,0,0,1,36,24c0,4.41-3.41,7-8,8a6.17,6.17,0,0,1,2,4.61v6.61a20,20,0,0,0-8.21-39Z"
                   transform="translate(-4.03 -4.04)"
@@ -71,7 +94,7 @@
               </svg>
             </a>
             <a class="linkedin" href="https://www.linkedin.com/in/khanyakeswa/">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+              <svg viewBox="0 0 40 40">
                 <path
                   d="M41,6H11a5,5,0,0,0-5,5V41a5,5,0,0,0,5,5H41a5,5,0,0,0,5-5V11A5,5,0,0,0,41,6ZM12.15,40l0-18.6h6.21l0,18.6Zm2.95-21h0a3.15,3.15,0,1,1,.07-6.28,3.15,3.15,0,1,1,0,6.28ZM39.91,40H33.64V29.84c0-2.44-.65-4.1-2.83-4.1a3.18,3.18,0,0,0-3,2.21,4.12,4.12,0,0,0-.2,1.47V40H21.3l0-18.61h6.3l0,2.62A5.81,5.81,0,0,1,33,21c4,0,7,2.59,7,8.18Z"
                   transform="translate(-6 -6)"
@@ -79,7 +102,7 @@
               </svg>
             </a>
             <a class="behance" href="https://www.behance.net/khanyakeswa">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 23.34">
+              <svg viewBox="0 0 40 23.34">
                 <rect x="24.99" width="11.67" height="3.33" />
                 <path
                   d="M38.06,31.33a4.66,4.66,0,0,1-2.58.72h-.4a4.51,4.51,0,0,1-4.25-4.74H44a18.57,18.57,0,0,0-.24-3.72,8.33,8.33,0,0,0-8.54-6.27,5.93,5.93,0,0,0-.73,0,9,9,0,0,0-8.82,9.18,8.24,8.24,0,0,0,.78,3.61,8.27,8.27,0,0,0,1.8,2.9,11.35,11.35,0,0,0,2.83,1.93,11.57,11.57,0,0,0,3.89.74,10,10,0,0,0,5.41-1.5,8.5,8.5,0,0,0,3.36-4.34H39.34A3.28,3.28,0,0,1,38.06,31.33ZM35.21,20.71c2.54,0,3.62,2.66,3.89,3.86H30.83A4.36,4.36,0,0,1,35.21,20.71Z"
@@ -92,7 +115,7 @@
               </svg>
             </a>
             <a class="twitter" href="https://twitter.com/khanyakeswa">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 32.51">
+              <svg viewBox="0 0 40 32.51">
                 <path
                   d="M46.12,14.62a16.48,16.48,0,0,1-4.72,1.29A8.23,8.23,0,0,0,45,11.37a16.42,16.42,0,0,1-5.21,2,8.21,8.21,0,0,0-14,7.48A23.32,23.32,0,0,1,8.9,12.27a8.22,8.22,0,0,0,2.54,11,8.3,8.3,0,0,1-3.71-1v.1a8.22,8.22,0,0,0,6.58,8.05,8.1,8.1,0,0,1-2.16.29,7.91,7.91,0,0,1-1.55-.15,8.23,8.23,0,0,0,7.67,5.7A16.48,16.48,0,0,1,8.08,39.7a18,18,0,0,1-2-.11A23.28,23.28,0,0,0,18.7,43.27c15.09,0,23.35-12.5,23.35-23.34,0-.36,0-.72,0-1.07a16.53,16.53,0,0,0,4.1-4.24"
                   transform="translate(-6.12 -10.77)"
@@ -102,7 +125,7 @@
           </div>
           <div class="about-me-dropdown">
             <div class="button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 19.3">
+              <svg viewBox="0 0 32.5 19.3">
                 <polygon
                   points="29.6 0 16.3 13.6 2.8 0.3 0 3.2 16.4 19.3 32.5 2.8 29.6 0"
                 />
@@ -121,12 +144,21 @@
             <div class="my-story">
               <div class="headshot"></div>
               <div class="body">
-                My name is Khanya Keswa, and I’m an aspiring Product Designer/Developer with a background in design. I am a graduate-to-be of Ohio State University. I’m currently in search of professional opportunities compatible with my career and creative pursuits.
+                My name is Khanya Keswa, and I’m an aspiring Product
+                Designer/Developer with a background in design. I'm about to
+                graduate from Ohio State University, and I'm looking forward to
+                new and challenging opportunities.
               </div>
             </div>
           </div>
         </div>
-        <div class="footer"></div>
+        <div class="footer">
+          <div class="contact-info">
+            <div class="email"></div>
+            <div class="phone"></div>
+          </div>
+          <div class="message-form"></div>
+        </div>
       </div>
     </main>
 

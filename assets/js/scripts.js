@@ -1,5 +1,5 @@
 ;(function () {
-  var el = document.querySelector('.landing .bg')
+  var el = document.querySelector('.bg')
   var loadingImage = new Image()
   loadingImage.src = '/assets/imgs/splash.jpg'
   loadingImage.addEventListener('load', function () {
@@ -13,6 +13,7 @@
   const sidebarCarousel = document.getElementById('sidebar-carousel')
   const sidebarCells = sidebarCarousel.querySelectorAll('.carousel-cell')
   const scrollButton = document.querySelector('.about-me-dropdown .button')
+  const logo = document.querySelector('.logo-container.primary')
   const splash = document.querySelector('.bg')
   const aboutMeSection = document.querySelector('#about-me')
 
@@ -111,14 +112,31 @@
 
   var controller = new ScrollMagic.Controller()
 
-  var tween = TweenMax.to(splash, 1, {
+  var tweenOne = TweenMax.fromTo(splash, 1, {
+    autoAlpha: 1,
+  }, {
     autoAlpha: 0,
   })
-  var scrollScene = new ScrollMagic.Scene({
+  var tweenTwo = TweenMax.to(logo, 1, {
+    height: 0,
+    ease: Power0.easeNone,
+  })
+
+  var scrollSceneOne = new ScrollMagic.Scene({
     triggerElement: '.landing',
     duration: '100%',
     triggerHook: 0,
   })
-  .setTween(tween)
+  .setTween(tweenOne)
   .addTo(controller)
+
+  var scrollSceneTwo = new ScrollMagic.Scene({
+    offset: -75,
+    triggerElement: '.footer',
+    duration: 75,
+    triggerHook: 0,
+  })
+  .setTween(tweenTwo)
+  .addTo(controller)
+  // .addIndicators()
 })()
