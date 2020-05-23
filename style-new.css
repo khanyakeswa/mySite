@@ -298,9 +298,7 @@ body {
   height: calc(100vw - 100px);
   margin-right: 0px;
   max-width: 360px;
-  min-width: 360px;
   max-height: 360px;
-  min-height: 360px;
   background: url('assets/imgs/headshot.jpg') no-repeat;
   background-size: 120%;
   background-position: 50% 40%;
@@ -411,6 +409,8 @@ body {
 
   .about-me .content .headshot {
     margin-right: 50px;
+    min-width: 360px;
+    min-height: 360px;
   }
 
   .about-me .content .body {
